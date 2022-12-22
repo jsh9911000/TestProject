@@ -4,8 +4,13 @@ import java.util.List;
 
 import member.dao.MemberDao;
 import member.dto.MemberDto;
-
+/*
+ * 	Service 객체: Client의 요청(회원가입, 로그인, 조회, 저장 등등)을 받아서 처리하는 객체.
+ * 						 A 요청에 대해선 DAO의 A 메소드, B 요청에 대해선 DAO의 B 메소드, C 요청에 대해선 DAO의 C 메소드
+ * 						Client와 DAO 사이에서 Controller 역할을 한다.
+ */
 public class MemberService {
+	
 	private MemberDao dao;
 	
 	public MemberService(MemberDao dao) {

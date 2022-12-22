@@ -7,13 +7,14 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%
+	//객체 생성.
 	MemberDto dto = new MemberDto();
 	MemberDao dao = new MemberDao();
 	MemberService ms = new MemberService(dao);
-	
+	//Service - DAO 를 통한 return 값이 배열이기 때문에, return 값을 배열로 받아야 한다.
 	List<MemberDto> list = new ArrayList<>();
 	list = ms.select_All();
-	
+	//setAttribute( , ) 를 해야 HTML 과 JS 영역에서 el를 통한 Key 값을 사용할 수 있다.
 	request.setAttribute("list", list);
 %>
 <!DOCTYPE html>
